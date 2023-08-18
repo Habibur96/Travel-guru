@@ -13,9 +13,13 @@ const Places = () => {
   }, []);
   return (
     <div>
-      {information.map((info) => (
-        <Terms key={info._id} info={info}></Terms>
-      ))}
+      <h3>{information.length}</h3>
+      {information.map(
+        (info) => (
+          <h3>{info.name}</h3>
+        )
+        // <Terms key={info.id} info={info}></Terms>
+      )}
     </div>
   );
 };
