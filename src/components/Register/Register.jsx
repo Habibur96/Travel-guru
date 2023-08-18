@@ -1,17 +1,29 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useAsyncError, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { user, createUser, mailVarify } = useContext(AuthContext);
+  const [accept, setAccept] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const handleAccepted = (event) => {
+    setAccept(event.target.checked);
+  };
+
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
     createUser(email, password);
+    mailVarify();
     form.reset("");
+    navigate("/");
     console.log(email, password);
   };
   return (
@@ -20,19 +32,41 @@ const Register = () => {
         <h3 className="text-success pb-3">Sign Up </h3>
         <Form.Group className="mb-4" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" name="email" placeholder="Enter email" />
+          <Form.Control
+            type="email"
+            name="email"
+            placeholder="Enter email"
+            required
+          />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            type="password"
+            type={show ? "text" : "password"}
             name="password"
             placeholder="Password"
+            required
           />
         </Form.Group>
+
+        <p onClick={() => setShow(!show)}>
+          {show ? <span>Hide password</span> : <span>Show Password</span>}
+        </p>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
+          <Form.Check
+            onClick={handleAccepted}
+            type="checkbox"
+            name="check"
+            label={
+              <>
+                Accepts{" "}
+                <Link to="/terms" className="text-decoration-none">
+                  Terms and conditions
+                </Link>
+              </>
+            }
+          />
         </Form.Group>
         <p>
           Already Have an Account? <></>
@@ -40,10 +74,11 @@ const Register = () => {
             Login
           </Link>
         </p>
-        <Button variant="primary" type="submit">
+        <Button variant="info" type="submit" disabled={!accept}>
           Submit
         </Button>
       </Form>
+      <SocialLogin></SocialLogin>
     </Container>
   );
 };

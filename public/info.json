@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Paris",
+    "country": "France",
+    "description": "Experience the romantic ambiance of Paris, the City of Love. Visit iconic landmarks like the Eiffel Tower and Louvre Museum. Enjoy exquisite French cuisine and stroll along the Seine River.",
+    "highlights": [
+      "Eiffel Tower",
+      "Louvre Museum",
+      "Champs-Elysées",
+      "Montmartre",
+      "Notre-Dame Cathedral"
+    ],
+    "best_time_to_visit": "Spring and Fall",
+    "activities": [
+      "Cruise on the Seine River",
+      "Explore art galleries and boutiques in Le Marais",
+      "Indulge in a wine and cheese tasting",
+      "Visit the Palace of Versailles"
+    ],
+    "currency": "Euro (EUR)",
+    "language": "French",
+    "time_zone": "Central European Time (CET)"
+  },
+  {
+    "name": "Kyoto",
+    "country": "Japan",
+    "description": "Immerse yourself in the traditional beauty of Kyoto. Explore ancient temples, peaceful gardens, and traditional tea houses. Witness the breathtaking cherry blossoms in spring.",
+    "highlights": [
+      "Kinkaku-ji (Golden Pavilion)",
+      "Fushimi Inari Shrine",
+      "Arashiyama Bamboo Grove",
+      "Kiyomizu-dera Temple",
+      "Gion District"
+    ],
+    "best_time_to_visit": "Spring and Fall",
+    "activities": [
+      "Attend a tea ceremony",
+      "Explore the Philosopher's Path",
+      "Visit Nijo Castle",
+      "Experience a traditional ryokan stay"
+    ],
+    "currency": "Japanese Yen (JPY)",
+    "language": "Japanese",
+    "time_zone": "Japan Standard Time (JST)"
+  },
+  {
+    "name": "Rio de Janeiro",
+    "country": "Brazil",
+    "description": "Discover the vibrant city of Rio de Janeiro with its stunning beaches, vibrant culture, and iconic landmarks. Relax on Copacabana Beach, hike up to Christ the Redeemer, and experience the excitement of Carnival.",
+    "highlights": [
+      "Christ the Redeemer",
+      "Copacabana Beach",
+      "Sugarloaf Mountain",
+      "Ipanema Beach",
+      "Lapa Arches"
+    ],
+    "best_time_to_visit": "September to November and March to May",
+    "activities": [
+      "Samba dance lessons",
+      "Hang gliding over the city",
+      "Explore the Santa Teresa neighborhood",
+      "Attend a soccer match at Maracanã Stadium"
+    ],
+    "currency": "Brazilian Real (BRL)",
+    "language": "Portuguese",
+    "time_zone": "Brasília Time (BRT)"
+  }
+]
